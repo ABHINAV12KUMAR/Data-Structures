@@ -1,0 +1,42 @@
+
+1.Qustion tree 
+package com.abhinav.question.tree;
+
+public class ImplemationUsingLL {
+	public static class ListNode{
+		int val;
+		ListNode left;
+		ListNode rigth;
+		ListNode(int val){
+			this.val=val;
+		}
+	}
+	public static void Display(ListNode root) {
+		if(root == null) {
+			return;
+		}
+		System.out.print(root.val+">");
+		if(root.left!=null) {
+			System.out.print(root.left.val+",");
+		}
+		if(root.rigth!=null) {
+			System.out.print(root.rigth.val);
+		}
+		System.out.println();
+		Display(root.left);
+		Display(root.rigth);
+		
+	}
+	public static void main(String[] args) {
+		ListNode root=new ListNode(4);
+		ListNode l2=new ListNode(2);
+		ListNode l3= new ListNode(3);
+		root.left=l2;
+		root.rigth=l3;
+		ListNode l4=new ListNode(5);
+		ListNode  l5=new ListNode(7);
+		l2.left=l4;
+		l2.rigth=l5;
+		Display(root);
+		
+	}
