@@ -1,0 +1,33 @@
+package com.abhinav.question.tree;
+
+public class FindtheMaxValueOfTree {
+	public static class ListNode{
+		int val;
+		ListNode left;
+		ListNode right;
+		ListNode(int val){
+			this.val= val;
+		}
+	}
+	public static int maxValueTree(ListNode root) {
+		if(root==null) {
+			return Integer.MIN_VALUE;
+		}
+		int a=(root.val);
+		int b=maxValueTree(root.left);
+		int c=maxValueTree(root.right);
+		return Math.max(a,Math.max(b,c));
+	}
+	public static void main(String[] args) {
+		ListNode root=new ListNode(4);
+		ListNode l2=new ListNode(2);
+		ListNode l3= new ListNode(3);
+		root.left=l2;
+		root.right=l3;
+		ListNode l4=new ListNode(5);
+		ListNode  l5=new ListNode(7);
+		l2.left=l4;
+		l2.right=l5;
+		System.out.println(maxValueTree(root));
+	}
+}
